@@ -24,8 +24,19 @@
 
 <table>
   <tr>
-    <td align="center"><img src="docs/screenshots/home.png" width="220" alt="Home"><br><sub>Home, dark theme</sub></td>
-    <td align="center"><img src="docs/screenshots/settings.png" width="220" alt="Settings"><br><sub>Settings, light theme</sub></td>
+    <td align="center"><img src="docs/screenshots/launchscreen.jpg" width="200" alt="Sign in"><br><sub>Sign in</sub></td>
+    <td align="center"><img src="docs/screenshots/home.jpg" width="200" alt="Create account"><br><sub>Create a group or join with a code</sub></td>
+    <td align="center"><img src="docs/screenshots/library.jpg" width="200" alt="Feed"><br><sub>Group feed</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/search.jpg" width="200" alt="Search"><br><sub>Search shows and movies</sub></td>
+    <td align="center"><img src="docs/screenshots/player.jpg" width="200" alt="Profile"><br><sub>Profile and lists 1</sub></td>
+    <td align="center"><img src="docs/screenshots/song.jpg" width="200" alt="Profile"><br><sub>Profile and lists 2</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/playlists.jpg" width="200" alt="Title details"><br><sub>Details and what friends say</sub></td>
+    <td align="center"><img src="docs/screenshots/settings.jpg" width="200" alt="Profile"><br><sub>Profile and lists 1</sub></td>
+    <td align="center"><img src="docs/screenshots/settings1.jpg" width="200" alt="Profile"><br><sub>Profile and lists 2</sub></td>
   </tr>
 </table>
 

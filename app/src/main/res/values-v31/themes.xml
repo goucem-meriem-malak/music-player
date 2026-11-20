@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Theme.Music" parent="android:Theme.Material.NoActionBar">
-        <item name="android:windowBackground">@color/music_violet_mid</item>
+        <item name="android:windowBackground">@drawable/splash_background</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
         <item name="android:forceDarkAllowed">false</item>
-        <item name="android:windowSplashScreenBackground">@color/music_violet_mid</item>
-        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+    </style>
+
+    <!-- Android 12+: the logo's vinyl spins while the system splash is up -->
+    <style name="Theme.Music.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/music_violet_mid</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_logo_animated</item>
+        <item name="windowSplashScreenAnimationDuration">900</item>
+        <item name="postSplashScreenTheme">@style/Theme.Music</item>
     </style>
 </resources>

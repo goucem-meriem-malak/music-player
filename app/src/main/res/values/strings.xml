@@ -34,6 +34,7 @@
     <string name="cd_repeat">Repeat</string>
     <string name="cd_back">Back</string>
     <string name="cd_close">Close</string>
+    <string name="cd_clear">Clear</string>
     <string name="cd_seek">Seek</string>
     <string name="cd_more_options">More options</string>
     <string name="cd_folder_up">Up one folder</string>

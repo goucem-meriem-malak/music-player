@@ -13,6 +13,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Close
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
@@ -114,9 +116,17 @@ fun GlassTextField(value: String, onValueChange: (String) -> Unit, hint: String,
         keyboardActions = androidx.compose.foundation.text.KeyboardActions(onSearch = { onSearch?.invoke() }),
         modifier = modifier.focusRequester(focus),
         decorationBox = { inner ->
-            Box(Modifier.fillMaxWidth().glass(RoundedCornerShape(18.dp), strong = true).padding(horizontal = 16.dp, vertical = 14.dp)) {
-                if (value.isEmpty()) Text(hint, style = MusicType.body, color = p.textFaint)
-                inner()
+            Row(
+                Modifier.fillMaxWidth().glass(RoundedCornerShape(18.dp), strong = true).padding(start = 16.dp, end = if (value.isEmpty()) 16.dp else 6.dp, top = 4.dp, bottom = 4.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Box(Modifier.weight(1f).padding(vertical = 10.dp)) {
+                    if (value.isEmpty()) Text(hint, style = MusicType.body, color = p.textFaint)
+                    inner()
+                }
+                if (value.isNotEmpty()) {
+                    BareIconButton(Icons.Rounded.Close, stringResource(R.string.cd_clear), tint = p.textSoft) { onValueChange("") }
+                }
             }
         },
     )
