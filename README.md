@@ -24,19 +24,19 @@
 
 <table>
   <tr>
-    <td align="center"><img src="docs/screenshots/launchscreen.jpg" width="200" alt="Sign in"><br><sub>Sign in</sub></td>
-    <td align="center"><img src="docs/screenshots/home.jpg" width="200" alt="Create account"><br><sub>Create a group or join with a code</sub></td>
-    <td align="center"><img src="docs/screenshots/library.jpg" width="200" alt="Feed"><br><sub>Group feed</sub></td>
+    <td align="center"><img src="docs/screenshots/launchscreen.jpg" width="200" alt="LaunchScreen"><br><sub>LaunchScreen</sub></td>
+    <td align="center"><img src="docs/screenshots/home.jpg" width="200" alt="Home"><br><sub>Home</sub></td>
+    <td align="center"><img src="docs/screenshots/library.jpg" width="200" alt="Library"><br><sub>Library</sub></td>
   </tr>
   <tr>
-    <td align="center"><img src="docs/screenshots/search.jpg" width="200" alt="Search"><br><sub>Search shows and movies</sub></td>
-    <td align="center"><img src="docs/screenshots/player.jpg" width="200" alt="Profile"><br><sub>Profile and lists 1</sub></td>
-    <td align="center"><img src="docs/screenshots/song.jpg" width="200" alt="Profile"><br><sub>Profile and lists 2</sub></td>
+    <td align="center"><img src="docs/screenshots/search.jpg" width="200" alt="Search"><br><sub>Search</sub></td>
+    <td align="center"><img src="docs/screenshots/player.jpg" width="200" alt="Player"><br><sub>Player</sub></td>
+    <td align="center"><img src="docs/screenshots/song.jpg" width="200" alt="Song"><br><sub>Song</sub></td>
   </tr>
   <tr>
-    <td align="center"><img src="docs/screenshots/playlists.jpg" width="200" alt="Title details"><br><sub>Details and what friends say</sub></td>
-    <td align="center"><img src="docs/screenshots/settings.jpg" width="200" alt="Profile"><br><sub>Profile and lists 1</sub></td>
-    <td align="center"><img src="docs/screenshots/settings1.jpg" width="200" alt="Profile"><br><sub>Profile and lists 2</sub></td>
+    <td align="center"><img src="docs/screenshots/playlists.jpg" width="200" alt="Playlists"><br><sub>Playlists</sub></td>
+    <td align="center"><img src="docs/screenshots/settings.jpg" width="200" alt="Settings"><br><sub>Settings-Dark Mode</sub></td>
+    <td align="center"><img src="docs/screenshots/settings1.jpg" width="200" alt="Settings"><br><sub>Settings-Light Mode</sub></td>
   </tr>
 </table>
 
