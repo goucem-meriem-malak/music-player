@@ -1,0 +1,44 @@
+# Android build output
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+bin/
+gen/
+out/
+build/
+app/build/
+app/release/
+# Gradle
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+# Local configuration
+local.properties
+# IDE
+.idea/
+*.iml
+.vscode/
+captures/
+.externalNativeBuild/
+.cxx/
+# Signing files, keystores, keys, tokens
+*.jks
+*.keystore
+*.pem
+*.p12
+*.key
+keystore.properties
+signing.properties
+*.token
+.env
+.env.*
+secrets.*
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+SETUP.md
