@@ -1,6 +1,6 @@
-# Aurora privacy notice
+# Music privacy notice
 
-Aurora works completely offline. The app has no internet permission and cannot send anything off your device.
+Music works completely offline. The app has no internet permission and cannot send anything off your device.
 
 **What it reads:** music files and their tags on your phone, to show your library.
 **What it stores (private app storage only):** playlists, favorites, play counts, settings, the last queue, and an artwork cache.

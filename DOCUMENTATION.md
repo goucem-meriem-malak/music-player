@@ -1,4 +1,4 @@
-# Aurora documentation
+# Music documentation
 
 ## Minimum Android version
 **Android 8.0 (API 26).** Reason: adaptive icons, notification channels used by Media3, `java.nio` atomic file moves,
@@ -6,13 +6,13 @@ variable font weights. Target/compile SDK 35.
 
 ## Structure
 ```
-app/src/main/java/com/goucem/aurora/
-  AuroraApp.kt           Application + AppContainer (one place that creates all singletons)
+app/src/main/java/com/goucem/music/
+  MusicApp.kt           Application + AppContainer (one place that creates all singletons)
   MainActivity.kt        Edge-to-edge Compose host, notification permission
   data/                  Models, JsonStore (atomic JSON), settings/, library/ (MediaStore, SAF, FolderTree), user/ (favorites, playlists, M3U)
   playback/              PlaybackService, PlayerConnection, SleepTimer, ArtBitmapLoader
   audio/                 AudioEffectsManager, BalanceAudioProcessor, EqCurves + presets
-  ui/                    AuroraRoot (navigation, sheets), theme/, components/, screens/
+  ui/                    MusicRoot (navigation, sheets), theme/, components/, screens/
   util/                  ArtworkLoader, Format
 ```
 
@@ -23,11 +23,14 @@ Full screen: Now Playing (swipe down or arrow to close), Queue, Equalizer, Audio
 Empty, loading, permission and error states are in `LibraryGate` and `EmptyState`.
 
 ## Design
-Follows your reference image: flat vivid violet background (#7050E4 → #5738C4), slightly lighter raised surfaces with soft dark drop shadows,
-dark indigo round buttons with light lilac icons, pink accent (#E044F7) for the current song and progress, circular artwork in a dark ring.
-Tokens live in `ui/theme/Theme.kt` (the surface modifier is still called `glass`). Light theme is soft lavender. Font: Montserrat (bundled, SIL OFL).
+Deep indigo violet background with slightly lighter raised surfaces and soft drop shadows, near-black indigo round buttons with lilac icons,
+a soft lavender accent for the current song and progress, and circular artwork. Colors live in `ui/theme/Theme.kt` (dark and light palettes).
+The surface modifier is still called `glass`. Light theme is a soft grey-lavender. Font: Montserrat (bundled, SIL OFL).
 "Soft shadows: Lite" in Settings removes shadows for slower phones. Now Playing adds a blurred artwork glow on Android 12+.
-App name shown to users: **Music**. Logo: your vinyl-disc image redrawn as an adaptive vector icon in the violet palette (original artwork is not embedded).
+The footer is one slim bar in the layout (mini-player above the tabs), so content never goes under it.
+Tab changes fade through with a small slide; detail screens slide in; Now Playing and Queue slide up.
+Every screen paints its own background so pages never blend. The app opts out of the phone's forced dark mode so light theme keeps dark text.
+Logo: a flat vinyl disc in the app's violet shades (`ic_launcher_*.xml`, README copy in `docs/images/logo.png`).
 
 ## Data and long-term independence
 All files are in `filesDir/data`: `settings.json`, `playlists.json`, `listening.json` (favorites + play counts),

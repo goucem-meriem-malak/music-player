@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "aurora-music-player"
+rootProject.name = "music-player"
 include(":app")

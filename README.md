@@ -1,51 +1,108 @@
-# Music
+<p align="center">
+  <img src="docs/images/logo.png" alt="Music logo" width="120">
+</p>
 
-**Your music. Your control. No compromises.**
+<h1 align="center">Music</h1>
 
-Music (project name "Aurora", package `com.goucem.aurora`) is a fully offline music player for Android with a soft-shadow violet design.
-No accounts, no ads, no tracking, no internet permission.
+<p align="center">
+  Your music. Your control.<br>
+  A fast, private, fully offline music player for Android. It plays the songs already on your phone.
+  No accounts, no ads, no tracking, no internet permission.
+</p>
 
-> **Honest status (v1.0.0):** the full source code is written and statically reviewed, but it has
-> **not been compiled, installed, or run yet** (the build environment had no Android SDK).
-> Please follow SETUP.md, build it, and test on your phone. See "Testing status" below.
+<p align="center">
+  <img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-Android-7F52FF?logo=kotlin&logoColor=white">
+  <img alt="Jetpack Compose" src="https://img.shields.io/badge/Jetpack%20Compose-UI-4285F4?logo=jetpackcompose&logoColor=white">
+  <img alt="Media3" src="https://img.shields.io/badge/AndroidX-Media3-3DDC84?logo=android&logoColor=white">
+  <img alt="Offline" src="https://img.shields.io/badge/Works-100%25%20offline-6957C8">
+  <img alt="License" src="https://img.shields.io/badge/License-All%20rights%20reserved-lightgrey">
+</p>
 
-## Features
-- Local library from MediaStore (internal storage and SD card) plus folders you pick yourself
-- Songs, albums, artists, genres, folder browsing, favorites, recently added/played, most played
-- Playback with AndroidX Media3 / ExoPlayer: gapless, shuffle, repeat, speed, seek, no unwanted autoplay
-- Queue: play next, add to queue, drag to reorder, remove, clear. Last queue is restored (paused)
-- Playlists saved locally, with M3U / M3U8 import and export
-- Equalizer (device bands, 13 presets, custom presets), bass enhancement, loudness boost, balance
-- Optional fade between songs, sleep timer (minutes or end of song)
-- Background playback, media notification, lock-screen and Bluetooth controls, audio focus, headphone-unplug pause
-- Soft-shadow violet interface (round dark buttons, pink accent, circular artwork), light and dark themes, reduced-motion and haptics settings, English with Arabic/RTL-ready structure
+---
 
 ## Screenshots
-Add your own after the first build: `docs/screenshots/home.png`, `now-playing.png`, `equalizer.png`.
 
-## Technology
-Kotlin, Jetpack Compose (Material 3 components only where needed), AndroidX Media3 (ExoPlayer + MediaSession),
-MediaStore, Storage Access Framework, Kotlin Coroutines and Flow, JSON files (org.json) for data.
-No Room, no SQLite, no backend, no Firebase, no analytics.
+<table>
+  <tr>
+    <td align="center"><img src="docs/screenshots/home.png" width="220" alt="Home"><br><sub>Home, dark theme</sub></td>
+    <td align="center"><img src="docs/screenshots/settings.png" width="220" alt="Settings"><br><sub>Settings, light theme</sub></td>
+  </tr>
+</table>
 
-## Architecture (short)
-```
-ui/          Compose screens, components, theme (glass design tokens)
-playback/    PlaybackService (ExoPlayer + MediaSession), PlayerConnection (MediaController), SleepTimer
-audio/       AudioEffectsManager (Equalizer, BassBoost, LoudnessEnhancer), BalanceAudioProcessor, EQ presets
-data/        Models, library (MediaStore + SAF scan), user data (favorites, stats, playlists, M3U), settings, JsonStore
-util/        ArtworkLoader (memory + disk cache), formatting
-```
-See DOCUMENTATION.md for details.
+## Features
 
-## Testing status
-| Item | Status |
+- **Your own library.** Finds the music on your phone and SD card, or any folder you pick. Songs, albums, artists, genres and a folder browser.
+- **Smart lists you control.** Favorites, recently added, recently played and most played. Nothing is recommended or pushed at you.
+- **Real playback.** Gapless playback, shuffle, repeat, speed control and seeking. It never starts playing on its own.
+- **Queue.** Play next, add to queue, drag to reorder, remove. Your last queue comes back paused when you reopen the app.
+- **Playlists.** Saved on your phone, with M3U / M3U8 import and export.
+- **Sound controls.** Equalizer with 13 presets and your own presets, bass enhancement, loudness boost and left/right balance.
+- **Sleep timer** (minutes or end of the current song) and an optional **fade between songs**.
+- **Background playback.** Notification, lock-screen and Bluetooth controls, audio focus, and pause when headphones are unplugged.
+- **Search** across songs, albums and artists.
+- **Light and dark themes.** Soft violet design with round buttons and circular artwork. Reduced-motion and haptics options.
+- **Private by design.** No internet permission at all. Playlists and settings stay on your phone.
+- **Ready for Arabic.** Texts live in resources and the layout supports right-to-left.
+
+## Tech stack
+
+| Part | Choice |
 |---|---|
-| Source written | Done |
-| Static review (braces, resource names, permissions, no network/secrets) | Done |
-| Gradle build | **Not run** |
-| Unit tests (written: M3U, folder tree, EQ curves, JSON store, formatting) | **Not run** |
-| Playback, notification, Bluetooth, equalizer on a real device | **Not tested** |
+| Language | Kotlin |
+| UI | Jetpack Compose |
+| Playback | AndroidX Media3 (ExoPlayer and MediaSession) |
+| Library | Android MediaStore and the Storage Access Framework |
+| Saved data | Small JSON files with safe atomic writes (no database) |
+| Sound effects | Android Equalizer, BassBoost and LoudnessEnhancer |
+| Font | Montserrat (SIL Open Font License) |
+
+No backend, no Firebase, no analytics and no paid services. Everything is free to build and run.
+
+## Quick start
+
+You need [Android Studio](https://developer.android.com/studio) (Koala 2024.1.2 or newer) and an Android 8.0+ phone or emulator.
+
+1. **Get the code**
+   ```bash
+   git clone https://github.com/goucem-meriem-malak/music-player.git
+   cd music-player
+   ```
+2. Open the folder in Android Studio and wait for **Gradle sync** (internet is needed only this first time).
+3. Plug in your phone and press **Run**.
+4. On first launch, allow **Music and audio** access and **Notifications**. You can also add a folder instead of giving music access.
+
+Build an APK to install on your phone:
+
+```bash
+./gradlew assembleRelease
+```
+
+The APK is created in `app/build/outputs/apk/release/`. More detail and common errors are in [SETUP.md](SETUP.md).
+
+## Project structure
+
+```
+app/src/main/java/com/gmm/music/
+  MusicApp.kt          app start and shared objects
+  MainActivity.kt      the one screen host
+  data/                library scan, playlists, favorites, settings, JSON storage
+  playback/            background service, player connection, sleep timer
+  audio/               equalizer, bass, loudness, balance
+  ui/                  navigation, screens, components, theme
+  util/                artwork loading and formatting
+docs/                  logo, screenshots, privacy notice, documentation
+```
+
+## Status
+
+Built and tried by hand on one Android phone. Unit tests are included in `app/src/test` but have not been run yet.
+Known limits are listed in [DOCUMENTATION.md](DOCUMENTATION.md).
 
 ## License
-Proprietary. All rights reserved by goucm-meriem-malak. See LICENSE.
+
+All rights reserved. See [LICENSE](LICENSE).
+
+## Credits
+
+Built with AndroidX Jetpack Compose and Media3, Kotlin, kotlinx.coroutines and Guava (Apache License 2.0).
+The Montserrat font is licensed under the SIL Open Font License 1.1.

@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.goucem.aurora"
+    namespace = "com.gmm.music"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.goucem.aurora"
+        applicationId = "com.gmm.music"
         minSdk = 26
         targetSdk = 35
         versionCode = 1

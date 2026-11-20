@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="aurora_violet_top">#7050E4</color>
-    <color name="aurora_violet_mid">#6445D8</color>
-    <color name="aurora_violet_bottom">#5738C4</color>
+    <color name="music_violet_top">#211B40</color>
+    <color name="music_violet_mid">#292250</color>
+    <color name="music_violet_bottom">#332961</color>
 </resources>

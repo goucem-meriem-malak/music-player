@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.Aurora" parent="android:Theme.Material.NoActionBar">
-        <item name="android:windowBackground">@color/aurora_violet_mid</item>
+    <style name="Theme.Music" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/music_violet_mid</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
